@@ -1,4 +1,4 @@
-name: Sonar Cloud Scan
+name: SonarCloud Scan
 on:
   push:
     branches:
@@ -7,15 +7,9 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   SonarCloudTrigger:
-    name: Build
+    name: SonarCloud Trigger
     runs-on: ubuntu-latest
-    env:
-      SONAR_SCANNER_VERSION: 4.6.1.2450 # Find the latest version in the "Linux" link on this page:
-                                        # https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/
-      SONAR_SERVER_URL: "https://sonarcloud.io"
-      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
     steps:
-      
         - name: Clone Repository
           uses: actions/checkout@v2
         - name: Analyze with SonarCloud
