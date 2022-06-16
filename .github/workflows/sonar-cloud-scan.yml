@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  SonarCludTrigger:
+  SonarCloudTrigger:
     name: Build
     runs-on: ubuntu-latest
     env:
